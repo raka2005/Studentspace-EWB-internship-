@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentSpace | Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Student Space</h2>
+        <p class="active">▦ Dashboard</p>
+        <p>♙ Students</p>
+        <div class="sidebar-note">
+            <h3>Little steps, big growth.</h3>
+            <p>Manage your student records with care.</p>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <header>
+            <div>
+                <p class="eyebrow">YOUR WORKSPACE</p>
+                <h1>Student Dashboard ✦</h1>
+                <p class="subtitle">A little overview of your student community.</p>
+            </div>
+            <button class="primary-btn" id="addStudentBtn">+ Add Student</button>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card lavender">
+                <p>Total Students</p>
+                <h2 id="totalStudents">0</h2>
+            </div>
+            <div class="stat-card mint">
+                <p>Courses Represented</p>
+                <h2 id="totalCourses">0</h2>
+            </div>
+            <div class="stat-card peach">
+                <p>Students with Contact</p>
+                <h2 id="contactCount">0</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-heading">
+                <div>
+                    <h2>All Students </h2>
+                    <p class="subtitle">Browse and manage student records.</p>
+                </div>
+            </div>
+
+            <div class="toolbar">
+                <input type="search" id="searchInput"
+                       placeholder="Search students by name...">
+                <button class="secondary-btn" id="refreshBtn">↻ Refresh</button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STUDENT</th>
+                            <th>ID</th>
+                            <th>DATE OF BIRTH</th>
+                            <th>COURSE</th>
+                            <th>CONTACT</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <tr><td colspan="6">Loading students...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <footer>Made with care ♡ · StudentSpace</footer>
+    </main>
+
+    <div class="modal" id="studentModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">×</button>
+            <p class="eyebrow">STUDENT DETAILS</p>
+            <h2 id="modalTitle">Add Student</h2>
+
+            <form id="studentForm">
+                <label>Full Name *
+                    <input id="name" name="name" required>
+                </label>
+
+                <label>Date of Birth *
+                    <input id="dob" name="date_of_birth" type="date" required>
+                </label>
+
+                <label>Email
+                    <input id="email" name="email" type="email">
+                </label>
+
+                <label>Phone
+                    <input id="phone" name="phone" type="tel">
+                </label>
+
+                <label>Course
+                    <input id="course" name="course">
+                </label>
+
+                <label>Address
+                    <input id="address" name="address">
+                </label>
+
+                <div class="form-actions">
+                    <button type="button" class="secondary-btn" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="primary-btn" id="saveBtn">Save Student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="/static/app.js" defer></script>
+</body>
+</html>
